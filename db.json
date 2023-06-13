@@ -1,0 +1,84 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "from": "Moscow",
+      "to": "St. Petersburg",
+      "company": "Airlines Inc.",
+      "price": 2500,
+      "currency": "RUB",
+      "time": {
+        "departure": "09:00",
+        "arrival": "11:30"
+      },
+      "duration": 2.5,
+      "date": "2023-06-10",
+      "connectionAmount": null
+    },
+    {
+      "id": 2,
+      "from": "London",
+      "to": "Paris",
+      "company": "Travel Co.",
+      "price": 1800,
+      "currency": "RUB",
+      "time": {
+        "departure": "14:30",
+        "arrival": "16:45"
+      },
+      "duration": 2.25,
+      "date": "2023-06-12",
+      "connectionAmount": 1
+      
+    
+    },
+    {
+      "id": 3,
+      "from": "New York",
+      "to": "Los Angeles",
+      "company": "Airways Ltd.",
+      "price": 4000,
+      "currency": "RUB",
+      "time": {
+        "departure": "08:15",
+        "arrival": "11:45"
+      },
+      "duration": 3.5,
+      "date": "2023-06-15",
+      "connectionAmount": 1
+
+    },
+    {
+      "id": 4,
+      "from": "New York",
+      "to": "Los Angeles",
+      "company": "Airways Ltd.",
+      "price": 4000,
+      "currency": "RUB",
+      "time": {
+        "departure": "08:15",
+        "arrival": "11:45"
+      },
+      "duration": 3.5,
+      "date": "2023-06-15",
+      "connectionAmount": 3
+
+    },
+    {
+      "id": 5,
+      "from": "New York",
+      "to": "Los Angeles",
+      "company": "Airways Ltd.",
+      "price": 4000,
+      "currency": "RUB",
+      "time": {
+        "departure": "08:15",
+        "arrival": "11:45"
+      },
+      "duration": 3.5,
+      "date": "2023-06-15",
+      "connectionAmount": 2
+
+    }
+  ]
+}
