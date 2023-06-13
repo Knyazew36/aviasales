@@ -12,6 +12,15 @@ const Company = ({ handleCheckboxChange }) => {
           onChange={(e) => handleCheckboxChange(e)}
         />
       </div>
+      <p>Колличество пересадок</p>
+      <div className='flex gap-2'>
+        <p>Airlines Inc</p>
+        <input
+          type='checkbox'
+          value='Airlines Inc.'
+          onChange={(e) => handleCheckboxChange(e)}
+        />
+      </div>
       <div className='flex gap-2'>
         <p>Airways Ltd</p>
         <input
