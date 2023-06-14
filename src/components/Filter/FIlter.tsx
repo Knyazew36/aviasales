@@ -3,10 +3,10 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import Transferred from '../Transferred/Transferred';
 import Company from '../Company/Company';
 import { useDispatch } from 'react-redux';
-import {
-  filteredСonnectionAmount,
-  filteredCompany,
-} from '../../store/slice/ticketsSlice';
+// import {
+//   filteredСonnectionAmount,
+//   filteredCompany,
+// } from '../../store/slice/ticketsSlice';
 
 const FIlter = () => {
   const [filtersConnection, setFiltersConnection] = useState<number[]>([]);
