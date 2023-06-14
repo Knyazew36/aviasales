@@ -14,16 +14,34 @@ const Dashboard = () => {
     dispatch(fetchTickets());
   }, [dispatch]);
 
+  const filteredCompany = useSelector((state: RootState) => state.tickets.companyFiltering)
+  const connectionAmount = useSelector((state: RootState) => state.tickets.connectionAmountFiltering)
+
+  console.log(filteredCompany)
+  console.log(connectionAmount)
+
+  const filteredTickets = tickets.filter(ticket => {
+    return (
+      (filteredCompany.length === 0 || filteredCompany.includes(ticket.company))
+      &&
+      (!connectionAmount || (ticket.connectionAmount !== null && connectionAmount.includes(ticket.connectionAmount)))
+    );
+  });
   return (
+
     <div>
-      {tickets.length &&
-        tickets.map((ticket) => (
-          <div className='flex flex-col mb-4' key={ticket.id}>
-            <p>Компания {ticket.company}</p>
-            <p>количество пересадок {ticket.connectionAmount}</p>
-          </div>
-        ))}
+      {tickets && filteredTickets.map(ticket =>
+        <div className='flex flex-col mb-4' key={ticket.id}>
+          <p>Компания {ticket.company}</p>
+          <p>количество пересадок {ticket.connectionAmount}</p>
+        </div>
+      )
+      }
     </div>
+
+
+
+
   );
 };
 

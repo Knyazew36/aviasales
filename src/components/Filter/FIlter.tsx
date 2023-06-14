@@ -3,10 +3,9 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import Transferred from '../Transferred/Transferred';
 import Company from '../Company/Company';
 import { useDispatch } from 'react-redux';
-// import {
-//   filteredСonnectionAmount,
-//   filteredCompany,
-// } from '../../store/slice/ticketsSlice';
+import {
+  addCompanyFiltering, addConnectionAmountFiltering
+} from '../../store/slice/ticketsSlice';
 
 const FIlter = () => {
   const [filtersConnection, setFiltersConnection] = useState<number[]>([]);
@@ -37,14 +36,16 @@ const FIlter = () => {
       updatedFilters = updatedFilters.filter((e) => e !== value);
     }
     setFiltersCompany(updatedFilters);
+
   };
 
   useEffect(() => {
-    dispatch(filteredСonnectionAmount(filtersConnection));
-  }, [filtersConnection]);
+    dispatch(addCompanyFiltering(filtersCompany))
+  }, [filtersCompany])
   useEffect(() => {
-    dispatch(filteredCompany(filtersCompany));
-  }, [filtersCompany]);
+    dispatch(addConnectionAmountFiltering(filtersConnection))
+  }, [filtersConnection])
+
 
   return (
     <div>
