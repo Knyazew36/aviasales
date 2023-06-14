@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addConnectionAmountElement } from '../../store/slice/ticketsSlice';
+const Transferred = () => {
+  const [filtersConnection, setFiltersConnection] = useState<number[]>([]);
+  const dispatch = useDispatch();
+  const handleCheckboxFilteredConnectionAmount = (
+    e: ChangeEvent<HTMLInputElement>
+  ) => {
+    const { value, checked } = e.target;
+    let updatedFilters: number[] = [...filtersConnection];
 
-const Transferred = ({ handleCheckboxChange }) => {
+    if (checked) {
+      updatedFilters.push(+value);
+    } else {
+      updatedFilters = updatedFilters.filter((e) => e !== +value);
+    }
+    setFiltersConnection(updatedFilters);
+  };
+  useEffect(() => {
+    dispatch(addConnectionAmountElement(filtersConnection));
+  }, [filtersConnection]);
+
   return (
     <div className='flex flex-col'>
       <p>Колличество пересадок</p>
@@ -9,7 +29,7 @@ const Transferred = ({ handleCheckboxChange }) => {
         <input
           type='checkbox'
           value='1'
-          onChange={(e) => handleCheckboxChange(e)}
+          onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
         />
       </div>
       <div className='flex gap-2'>
@@ -17,7 +37,7 @@ const Transferred = ({ handleCheckboxChange }) => {
         <input
           type='checkbox'
           value='2'
-          onChange={(e) => handleCheckboxChange(e)}
+          onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
         />
       </div>
       <div className='flex gap-2'>
@@ -25,7 +45,7 @@ const Transferred = ({ handleCheckboxChange }) => {
         <input
           type='checkbox'
           value='3'
-          onChange={(e) => handleCheckboxChange(e)}
+          onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
         />
       </div>
     </div>

@@ -2,13 +2,15 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { Ticket } from './../../model/model';
 
 interface TicketsSlice {
-  originalTickets: Ticket[];
-  filteredTickets: Ticket[];
+  ticketsList: Ticket[];
+  filteredCompany: string[];
+  filteredConnectionAmount: number[];
 }
 
 const initialState: TicketsSlice = {
-  originalTickets: [],
-  filteredTickets: [],
+  ticketsList: [],
+  filteredCompany: [],
+  filteredConnectionAmount: [],
 };
 
 export const fetchTickets = createAsyncThunk<Ticket[]>(
@@ -24,46 +26,25 @@ export const ticketsSlice = createSlice({
   name: 'tickets',
   initialState,
   reducers: {
-    filteredСonnectionAmount: (
-      state,
-      { payload }: PayloadAction<(number | null)[]>
-    ) => {
-      if (
-        payload.length === 0 ||
-        payload.includes(null) ||
-        state.filteredTickets.length === 0
-      ) {
-        state.filteredTickets = state.originalTickets;
-      } else {
-        state.filteredTickets = state.originalTickets.filter((e) =>
-          payload.includes(e.connectionAmount)
-        );
-      }
+    addCompanyElement: (state, { payload }: PayloadAction<string[]>) => {
+      state.filteredCompany = [...payload];
     },
-    filteredCompany: (state, { payload }: PayloadAction<(string | null)[]>) => {
-      if (
-        (payload.length === 0 || payload.includes(null)) &&
-        state.filteredTickets.length === 0
-      ) {
-        state.filteredTickets = state.originalTickets;
-      } else {
-        state.filteredTickets = state.originalTickets.filter((e) =>
-          payload.includes(e.company)
-        );
-      }
+    addConnectionAmountElement: (
+      state,
+      { payload }: PayloadAction<number[]>
+    ) => {
+      state.filteredConnectionAmount = [...payload];
     },
   },
   extraReducers: (builder) => {
     builder.addCase(
       fetchTickets.fulfilled,
       (state, action: PayloadAction<Ticket[]>) => {
-        state.filteredTickets.push(...action.payload);
-        state.originalTickets.push(...action.payload);
+        state.ticketsList.push(...action.payload);
       }
     );
   },
 });
-
-export default ticketsSlice.reducer;
-export const { filteredСonnectionAmount, filteredCompany } =
+export const { addConnectionAmountElement, addCompanyElement } =
   ticketsSlice.actions;
+export default ticketsSlice.reducer;
