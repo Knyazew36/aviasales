@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 const FIlter = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-[47px]'>
       <Transferred />
       <Company />
     </div>

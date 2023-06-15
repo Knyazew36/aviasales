@@ -1,9 +1,11 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addConnectionAmountElement } from '../../store/slice/ticketsSlice';
+
 const Transferred = () => {
   const [filtersConnection, setFiltersConnection] = useState<number[]>([]);
   const dispatch = useDispatch();
+
   const handleCheckboxFilteredConnectionAmount = (
     e: ChangeEvent<HTMLInputElement>
   ) => {
@@ -17,36 +19,39 @@ const Transferred = () => {
     }
     setFiltersConnection(updatedFilters);
   };
+
   useEffect(() => {
     dispatch(addConnectionAmountElement(filtersConnection));
   }, [filtersConnection]);
 
   return (
-    <div className='flex flex-col'>
-      <p>Колличество пересадок</p>
-      <div className='flex gap-2'>
-        <p>Одна п</p>
-        <input
-          type='checkbox'
-          value='1'
-          onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
-        />
-      </div>
-      <div className='flex gap-2'>
-        <p>две п</p>
-        <input
-          type='checkbox'
-          value='2'
-          onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
-        />
-      </div>
-      <div className='flex gap-2'>
-        <p>три п</p>
-        <input
-          type='checkbox'
-          value='3'
-          onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
-        />
+    <div className='flex flex-col bg-[#E8EBF2] rounded-[10px] p-[19px] pb-[50px]'>
+      <p className=' font-bold text-[20px] text-[#4E148C] pb-7'>Колличество пересадок</p>
+      <div className='flex flex-col gap-2'>
+        <div className='flex gap-2'>
+          <input
+            type='checkbox'
+            value='1'
+            onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
+          />
+          <p className=' text-base text-[#858AE3] font-medium'>Одна п</p>
+        </div>
+        <div className='flex gap-2'>
+          <input
+            type='checkbox'
+            value='2'
+            onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
+          />
+          <p>две п</p>
+        </div>
+        <div className='flex gap-2'>
+          <input
+            type='checkbox'
+            value='3'
+            onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
+          />
+          <p>три п</p>
+        </div>
       </div>
     </div>
   );

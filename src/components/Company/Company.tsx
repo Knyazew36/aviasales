@@ -19,24 +19,27 @@ const Company = () => {
   useEffect(() => {
     dispatch(addCompanyElement(filtersCompany));
   }, [filtersCompany]);
+
   return (
-    <div className='flex flex-col'>
-      <p>Колличество пересадок</p>
-      <div className='flex gap-2'>
-        <p>Airlines Inc</p>
-        <input
-          type='checkbox'
-          value='Airlines Inc.'
-          onChange={(e) => handleCheckboxFilteredCompany(e)}
-        />
-      </div>
-      <div className='flex gap-2'>
-        <p>Airways Ltd</p>
-        <input
-          type='checkbox'
-          value='Airways Ltd.'
-          onChange={(e) => handleCheckboxFilteredCompany(e)}
-        />
+    <div className='flex flex-col bg-[#E8EBF2] rounded-[10px] p-[19px] pb-[50px]'>
+      <p className=' font-bold text-[20px] text-[#4E148C] pb-7'>Колличество пересадок</p>
+      <div className='flex flex-col gap-2'>
+        <div className='flex gap-2'>
+          <input
+            type='checkbox'
+            value='Airlines Inc.'
+            onChange={(e) => handleCheckboxFilteredCompany(e)}
+          />
+          <p className=' text-base text-[#858AE3] font-medium'>Airlines Inc</p>
+        </div>
+        <div className='flex gap-2'>
+          <input
+            type='checkbox'
+            value='Airways Ltd.'
+            onChange={(e) => handleCheckboxFilteredCompany(e)}
+          />
+          <p className=' text-base text-[#858AE3] font-medium'>Airways Ltd</p>
+        </div>
       </div>
     </div>
   );
