@@ -5,12 +5,14 @@ interface TicketsSlice {
   ticketsList: Ticket[];
   filteredCompany: string[];
   filteredConnectionAmount: number[];
+  sortedElement: string;
 }
 
 const initialState: TicketsSlice = {
   ticketsList: [],
   filteredCompany: [],
   filteredConnectionAmount: [],
+  sortedElement: ''
 };
 
 export const fetchTickets = createAsyncThunk<Ticket[]>(
@@ -35,6 +37,9 @@ export const ticketsSlice = createSlice({
     ) => {
       state.filteredConnectionAmount = [...payload];
     },
+    addSort: (state, { payload }: PayloadAction<string>) => {
+      state.sortedElement = payload
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(
@@ -45,6 +50,6 @@ export const ticketsSlice = createSlice({
     );
   },
 });
-export const { addConnectionAmountElement, addCompanyElement } =
+export const { addConnectionAmountElement, addCompanyElement, addSort } =
   ticketsSlice.actions;
 export default ticketsSlice.reducer;
