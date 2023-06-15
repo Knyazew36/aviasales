@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addSort } from '../../store/slice/ticketsSlice'
-import cn from 'classnames'
 
 const Sort = () => {
   const [butotnActive, setButtonActive] = useState('')
@@ -13,14 +12,16 @@ const Sort = () => {
     setButtonActive(e.target.id)
   }
 
-
-
   return (
     <div className='w-full grid grid-cols-3' onClick={(e) => clickButtonHandle(e)
     }>
-      <button id='price' className='' >Самый дешевый</button>
-      <button id='time' className='py-[18px]' >Самый быстрый</button>
-      <button id='optimal' >Самый оптимальный</button>
+      <button id='price'
+        className={
+          'py-[18px] border border-purple-900 font-bold text-base text-center text-purple-900 bg-[#E8EBF2] rounded-l-lg ' + (butotnActive === 'price' ? 'bg-purple-900 text-white' : '')
+        }
+      >Самый дешевый</button>
+      <button id='time' className={'py-[18px] border border-purple-900 font-bold text-base text-center text-purple-900 bg-[#E8EBF2] ' + (butotnActive === 'time' ? 'bg-purple-900 text-white' : '')}>Самый быстрый</button>
+      <button id='optimal' className={'py-[18px] border border-purple-900 font-bold text-base text-center text-purple-900 bg-[#E8EBF2] rounded-r-lg ' + (butotnActive === 'optimal' ? 'bg-purple-900 text-white' : '')}>Самый оптимальный</button>
     </div>
   )
 }

@@ -33,14 +33,16 @@ const Transferred = () => {
             type='checkbox'
             value='1'
             onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
+            id='check1'
           />
-          <p className=' text-base text-[#858AE3] font-medium'>Одна п</p>
+          <p className=' text-base text-[#858AE3] font-medium'>Одна пересадка</p>
         </div>
         <div className='flex gap-2'>
           <input
             type='checkbox'
             value='2'
             onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
+            id='check1'
           />
           <p>две п</p>
         </div>
@@ -49,6 +51,7 @@ const Transferred = () => {
             type='checkbox'
             value='3'
             onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
+
           />
           <p>три п</p>
         </div>

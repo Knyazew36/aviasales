@@ -29,8 +29,6 @@
       "duration": 2.25,
       "date": "2023-06-12",
       "connectionAmount": 1
-      
-    
     },
     {
       "id": 3,
@@ -46,7 +44,6 @@
       "duration": 3.5,
       "date": "2023-06-15",
       "connectionAmount": 1
-
     },
     {
       "id": 4,
@@ -62,7 +59,6 @@
       "duration": 3.5,
       "date": "2023-06-15",
       "connectionAmount": 3
-
     },
     {
       "id": 5,
@@ -78,7 +74,36 @@
       "duration": 3.5,
       "date": "2023-06-15",
       "connectionAmount": 2
-
+    },
+    {
+      "id": 6,
+      "from": "New York",
+      "to": "Los Angeles",
+      "company": "Airways Ltd.",
+      "price": 4000,
+      "currency": "RUB",
+      "time": {
+        "departure": "08:15",
+        "arrival": "11:45"
+      },
+      "duration": 3.5,
+      "date": "2023-06-15",
+      "connectionAmount": 3
+    },
+    {
+      "id": 7,
+      "from": "New York",
+      "to": "Los Angeles",
+      "company": "Airways Ltd.",
+      "price": 4000,
+      "currency": "RUB",
+      "time": {
+        "departure": "08:15",
+        "arrival": "11:45"
+      },
+      "duration": 3.5,
+      "date": "2023-06-15",
+      "connectionAmount": 2
     }
   ]
 }

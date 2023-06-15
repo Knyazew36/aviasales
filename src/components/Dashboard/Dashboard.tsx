@@ -6,6 +6,7 @@ import Sort from '../Sort/Sort';
 
 const Dashboard = () => {
   const [data, setData] = useState<any>([])
+  const [listCount, setListCount] = useState(3)
 
   const tickets = useSelector((state: RootState) => state.tickets.ticketsList);
   const sortElement = useSelector((state: RootState) => state.tickets.sortedElement);
@@ -65,6 +66,14 @@ const Dashboard = () => {
     }
   }, [sortElement])
 
+  useEffect(() => {
+    setData(tickets.slice(0, listCount));
+  }, [listCount, tickets]);
+
+  const buttonClickHandler = () => {
+    setListCount(prev => prev + 3)
+  }
+
   const newTickets = data
     .map((ticket) => (
       <div className='flex flex-col p-10 pb-9 bg-[#E8EBF2] rounded-[10px] w-[730px]' key={ticket.id}>
@@ -90,11 +99,11 @@ const Dashboard = () => {
   return (
     <div>
       <Sort />
-      <div className='flex flex-col gap-12'>
+      <div className='flex flex-col gap-12 mt-8'>
         {tickets.length && newTickets
         }
       </div>
-      <button className='font-bold rounded-[10px] text-2xl mt-[74px] flex justify-center py-4 text-center w-full mb-[60px] bg-purple-900 text-[#F7F9F7]'>Загрузить еще билеты</button>
+      <button onClick={buttonClickHandler} className='font-bold rounded-[10px] text-2xl mt-[74px] flex justify-center py-4 text-center w-full mb-[60px] bg-purple-900 text-[#F7F9F7]'>Загрузить еще билеты</button>
     </div>
   );
 };

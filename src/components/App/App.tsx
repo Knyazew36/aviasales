@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='flex flex-col gap-4 container margin-auto justify-between w-full m-auto'>
       <Header />
-      <div className='flex gap-[50px] justify-center'>
+      <div className='flex gap-[50px] justify-center '>
         <div className=' flex flex-col gap-[47px] '>
           <FIlter />
         </div>
