@@ -1,12 +1,10 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
-
+import React from 'react';
 import Transferred from '../Transferred/Transferred';
 import Company from '../Company/Company';
-import { useDispatch } from 'react-redux';
 
 const FIlter = () => {
   return (
-    <div className='flex flex-col gap-[47px]'>
+    <div className='flex flex-col gap-[47px] lg:flex-row'>
       <Transferred />
       <Company />
     </div>

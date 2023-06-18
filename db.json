@@ -1,109 +1,155 @@
 {
   "tickets": [
-    {
-      "id": 1,
-      "from": "Moscow",
-      "to": "St. Petersburg",
-      "company": "Airlines Inc.",
-      "price": 2500,
-      "currency": "RUB",
-      "time": {
-        "departure": "09:00",
-        "arrival": "11:30"
-      },
-      "duration": 2.5,
-      "date": "2023-06-10",
-      "connectionAmount": null
+  {
+    "id": 1,
+    "from": "Moscow",
+    "to": "St. Petersburg",
+    "company": "Airlines Inc.",
+    "price": 2500,
+    "currency": "RUB",
+    "time": {
+      "departure": "09:00",
+      "arrival": "11:30"
     },
-    {
-      "id": 2,
-      "from": "London",
-      "to": "Paris",
-      "company": "Travel Co.",
-      "price": 1800,
-      "currency": "RUB",
-      "time": {
-        "departure": "14:30",
-        "arrival": "16:45"
-      },
-      "duration": 2.25,
-      "date": "2023-06-12",
-      "connectionAmount": 1
+    "duration": 2.5,
+    "date": "2023-06-10",
+    "connectionAmount": null
+  },
+  {
+    "id": 2,
+    "from": "London",
+    "to": "Paris",
+    "company": "Travel Co.",
+    "price": 1800,
+    "currency": "RUB",
+    "time": {
+      "departure": "14:30",
+      "arrival": "16:45"
     },
-    {
-      "id": 3,
-      "from": "New York",
-      "to": "Los Angeles",
-      "company": "Airways Ltd.",
-      "price": 4000,
-      "currency": "RUB",
-      "time": {
-        "departure": "08:15",
-        "arrival": "11:45"
-      },
-      "duration": 3.5,
-      "date": "2023-06-15",
-      "connectionAmount": 1
+    "duration": 2.25,
+    "date": "2023-06-12",
+    "connectionAmount": 1
+  },
+  {
+    "id": 3,
+    "from": "New York",
+    "to": "Los Angeles",
+    "company": "Airline XYZ",
+    "price": 3500,
+    "currency": "USD",
+    "time": {
+      "departure": "08:00",
+      "arrival": "11:30"
     },
-    {
-      "id": 4,
-      "from": "New York",
-      "to": "Los Angeles",
-      "company": "Airways Ltd.",
-      "price": 4000,
-      "currency": "RUB",
-      "time": {
-        "departure": "08:15",
-        "arrival": "11:45"
-      },
-      "duration": 3.5,
-      "date": "2023-06-15",
-      "connectionAmount": 3
+    "duration": 3.5,
+    "date": "2023-06-15",
+    "connectionAmount": 2
+  },
+  {
+    "id": 4,
+    "from": "Tokyo",
+    "to": "Sydney",
+    "company": "Global Airways",
+    "price": 5000,
+    "currency": "JPY",
+    "time": {
+      "departure": "12:00",
+      "arrival": "21:30"
     },
-    {
-      "id": 5,
-      "from": "New York",
-      "to": "Los Angeles",
-      "company": "Airways Ltd.",
-      "price": 4000,
-      "currency": "RUB",
-      "time": {
-        "departure": "08:15",
-        "arrival": "11:45"
-      },
-      "duration": 3.5,
-      "date": "2023-06-15",
-      "connectionAmount": 2
+    "duration": 9.5,
+    "date": "2023-06-18",
+    "connectionAmount": 3
+  },
+  {
+    "id": 5,
+    "from": "Berlin",
+    "to": "Rome",
+    "company": "EuroFly",
+    "price": 2000,
+    "currency": "EUR",
+    "time": {
+      "departure": "10:30",
+      "arrival": "12:15"
     },
-    {
-      "id": 6,
-      "from": "New York",
-      "to": "Los Angeles",
-      "company": "Airways Ltd.",
-      "price": 4000,
-      "currency": "RUB",
-      "time": {
-        "departure": "08:15",
-        "arrival": "11:45"
-      },
-      "duration": 3.5,
-      "date": "2023-06-15",
-      "connectionAmount": 3
+    "duration": 1.75,
+    "date": "2023-06-20",
+    "connectionAmount": null
+  },
+  {
+    "id": 6,
+    "from": "Cairo",
+    "to": "Dubai",
+    "company": "Middle East Airlines",
+    "price": 3000,
+    "currency": "AED",
+    "time": {
+      "departure": "14:00",
+      "arrival": "18:30"
     },
-    {
-      "id": 7,
-      "from": "New York",
-      "to": "Los Angeles",
-      "company": "Airways Ltd.",
-      "price": 4000,
-      "currency": "RUB",
-      "time": {
-        "departure": "08:15",
-        "arrival": "11:45"
-      },
-      "duration": 3.5,
-      "date": "2023-06-15",
-      "connectionAmount": 2
-    }
-  ]
+    "duration": 4.5,
+    "date": "2023-06-22",
+    "connectionAmount": 2
+  },
+  {
+    "id": 7,
+    "from": "Singapore",
+    "to": "Bangkok",
+    "company": "AirAsia",
+    "price": 1500,
+    "currency": "THB",
+    "time": {
+      "departure": "07:45",
+      "arrival": "09:30"
+    },
+    "duration": 1.75,
+    "date": "2023-06-25",
+    "connectionAmount": 1
+  },
+  {
+    "id": 8,
+    "from": "São Paulo",
+    "to": "Rio de Janeiro",
+    "company": "Brazilian Airlines",
+    "price": 2800,
+    "currency": "BRL",
+    "time": {
+      "departure": "10:15",
+      "arrival": "11:45"
+    },
+    "duration": 1.5,
+    "date": "2023-06-28",
+    "connectionAmount": null
+  },
+  {
+    "id": 9,
+    "from": "Toronto",
+    "to": "Vancouver",
+    "company": "Air Canada",
+    "price": 2200,
+    "currency": "CAD",
+    "time": {
+      "departure": "11:30",
+      "arrival": "14:45"
+    },
+    "duration": 3.25,
+    "date": "2023-07-01",
+    "connectionAmount": 1
+  },
+  {
+    "id": 10,
+    "from": "Mumbai",
+    "to": "Delhi",
+    "company": "Indian Airways",
+    "price": 1900,
+    "currency": "INR",
+    "time": {
+      "departure": "16:00",
+      "arrival": "17:30"
+    },
+    "duration": 1.5,
+    "date": "2023-07-03",
+    "connectionAmount": null
+  }
+]
+
 }
