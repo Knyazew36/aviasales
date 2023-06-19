@@ -4,7 +4,7 @@ import { addConnectionAmountElement } from '../../store/slice/ticketsSlice';
 import { RootState } from '../../store/store';
 
 const Transferred = () => {
-  const [filtersConnection, setFiltersConnection] = useState<number[]>([]);
+  const [filtersConnection, setFiltersConnection] = useState<any>([]);
   const dispatch = useDispatch();
 
   const handleCheckboxFilteredConnectionAmount = (
@@ -12,15 +12,15 @@ const Transferred = () => {
   ) => {
     const { value, checked } = e.target;
 
-    let updatedFilters: number[] = [...filtersConnection];
+    let updatedFilters: Array<number | null> = [...filtersConnection];
 
-    // if (value === '') {
-    //   if (checked) {
-    //     updatedFilters.push(null);
-    //   } else {
-    //     updatedFilters = updatedFilters.filter((e) => e !== +value);
-    //   }
-    // }
+    if (value === '') {
+      if (checked) {
+        updatedFilters.push(...[null]);
+      } else {
+        updatedFilters = updatedFilters.filter((e) => e !== +value);
+      }
+    }
 
     if (checked) {
       updatedFilters.push(+value);
@@ -54,7 +54,7 @@ const Transferred = () => {
       </p>
       <div className='flex flex-col gap-2'>
         {connectionAmountList.map((elem) => (
-          <div className='flex gap-2'>
+          <div className='flex gap-2' key={elem}>
             <input
               type='checkbox'
               value={elem ? elem : ''}
