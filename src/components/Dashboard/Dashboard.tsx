@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../store/store';
 import { fetchTickets } from '../../store/slice/ticketsSlice';
 import Sort from '../Sort/Sort';
+import { Ticket } from '../../model/model';
 
 const Dashboard = () => {
   const [data, setData] = useState<any>([])
@@ -75,8 +76,8 @@ const Dashboard = () => {
   }
 
   const newTickets = data
-    .map((ticket) => (
-      <div className='flex flex-col p-10 pb-9 bg-[#E8EBF2] rounded-[10px] w-[730px]' key={ticket.id}>
+    .map((ticket: Ticket) => (
+      <div className='flex flex-col p-10 pb-9 bg-[#E8EBF2] rounded-[10px] m-w-[710px] lg:m-w-full ' key={ticket.id}>
         <div>
           <p className='font-bold text-4xl text-purple-900'>{ticket.price} р</p>
         </div>
@@ -97,13 +98,16 @@ const Dashboard = () => {
       </div>
     ))
   return (
-    <div>
+    <div className='m-w-full lg:min-w-[730px]'>
       <Sort />
       <div className='flex flex-col gap-12 mt-8'>
-        {tickets.length && newTickets
+        {tickets.length && (newTickets.length ? newTickets : <p className='font-bold text-base text-center text-purple-900'>Список пуст</p>
+        )
         }
       </div>
-      <button onClick={buttonClickHandler} className='font-bold rounded-[10px] text-2xl mt-[74px] flex justify-center py-4 text-center w-full mb-[60px] bg-purple-900 text-[#F7F9F7]'>Загрузить еще билеты</button>
+      <button onClick={buttonClickHandler}
+        disabled={!newTickets.length}
+        className={'font-bold rounded-[10px] text-2xl mt-[74px] flex justify-center py-4 text-center w-full mb-[60px]  text-[#F7F9F7] ' + (newTickets.length ? 'bg-purple-900' : 'bg-purple-100')}>Загрузить еще билеты</button>
     </div>
   );
 };

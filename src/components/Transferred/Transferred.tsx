@@ -34,6 +34,7 @@ const Transferred = () => {
             value='1'
             onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
             id='check1'
+            className='cursor-pointer'
           />
           <p className=' text-base text-[#858AE3] font-medium'>Одна пересадка</p>
         </div>
@@ -43,6 +44,7 @@ const Transferred = () => {
             value='2'
             onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
             id='check1'
+            className='cursor-pointer'
           />
           <p>две п</p>
         </div>
@@ -51,7 +53,7 @@ const Transferred = () => {
             type='checkbox'
             value='3'
             onChange={(e) => handleCheckboxFilteredConnectionAmount(e)}
-
+            className='cursor-pointer'
           />
           <p>три п</p>
         </div>

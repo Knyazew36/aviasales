@@ -1,6 +1,6 @@
 export interface TicketTime {
-  startTime: string;
-  endTime: string;
+  departure: string;
+  arrival: string;
 }
 
 export interface Ticket {
