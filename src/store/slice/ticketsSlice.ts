@@ -4,7 +4,7 @@ import { Ticket } from './../../model/model';
 interface TicketsSlice {
   ticketsList: Ticket[];
   filteredCompany: string[];
-  filteredConnectionAmount: number[];
+  filteredConnectionAmount: number[] | null;
   sortedElement: string;
 }
 
@@ -12,7 +12,7 @@ const initialState: TicketsSlice = {
   ticketsList: [],
   filteredCompany: [],
   filteredConnectionAmount: [],
-  sortedElement: ''
+  sortedElement: '',
 };
 
 export const fetchTickets = createAsyncThunk<Ticket[]>(
@@ -38,8 +38,8 @@ export const ticketsSlice = createSlice({
       state.filteredConnectionAmount = [...payload];
     },
     addSort: (state, { payload }: PayloadAction<string>) => {
-      state.sortedElement = payload
-    }
+      state.sortedElement = payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(

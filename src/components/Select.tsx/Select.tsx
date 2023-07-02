@@ -24,8 +24,10 @@ const Select = () => {
         }
       >
         <div className='flex items-center gap-2'>
-          <p className='text-[16px] font-medium text-white'>
-            {companyList.length ? companyList : 'Любая авиакомпания '}
+          <p className='text-[16px] font-medium text-white max-w-[400px]'>
+            {companyList.length
+              ? `Выбранные авиакомпани: ${companyList}`
+              : 'Любая авиакомпания '}
           </p>
           <p className='text-[16px] font-medium text-white'>
             {connectionAmountList.length

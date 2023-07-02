@@ -21,7 +21,6 @@ const Dashboard = () => {
     (state: RootState) => state.tickets.filteredConnectionAmount
   );
   const dispatch: AppDispatch = useDispatch();
-
   useEffect(() => {
     setData(tickets);
   }, [tickets]);
@@ -37,9 +36,6 @@ const Dashboard = () => {
           return false;
         }
         if (filteredConnectionAmount.length) {
-          if (e.connectionAmount === null) {
-            return false;
-          }
           if (!filteredConnectionAmount.includes(e.connectionAmount)) {
             return false;
           }
